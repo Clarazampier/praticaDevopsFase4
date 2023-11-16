@@ -1,0 +1,35 @@
+version: '3'
+services:
+  jenkins:
+    container_name: jk_ct_servidor_f
+    image: jk_im_servidor_f:0.1
+    build:
+      context: .
+      dockerfile: dockerfileJenkins
+    ports:
+      - "8080:8080"
+    networks:
+      - ana
+
+  remote_host:
+    container_name: remote_host_ct_f
+    image: remote_host_im_f:0.1
+    build:
+      context: .
+      dockerfile: dockerfileUbuntu
+    networks: 
+      - ana
+
+  remote_web:
+    container_name: remote-web
+    image: remote_web_im_f:0.1
+    build:
+      context: .
+      dockerfile: dockerfileSpring
+    ports:
+      - "8181:8080"  
+    networks: 
+      - ana   
+
+networks:
+  ana:
