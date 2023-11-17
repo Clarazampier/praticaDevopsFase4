@@ -9,6 +9,6 @@ RUN mvn clean package -DskipTests
 
 FROM openjdk:17-jdk-slim
 
-COPY --from=maquinabuild /target/salaf_demo-0.0.1-SNAPSHOT.jar fidalgo.jar
+COPY --from=maquinabuild /target/pratica_API-0.0.1-SNAPSHOT.jar teste.jar
 EXPOSE 8080
-ENTRYPOINT ["java","-jar", "fidalgo.jar"]
+ENTRYPOINT ["java","-jar", "teste.jar"]
