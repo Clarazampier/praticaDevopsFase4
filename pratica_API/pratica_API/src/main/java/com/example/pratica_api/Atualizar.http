@@ -1,0 +1,6 @@
+PUT http://localhost:8081/api/funcionarios/atualizar/1
+Content-Type: application/json
+
+{
+  "cargo": "teste"
+}

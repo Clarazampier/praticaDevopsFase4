@@ -1,0 +1,10 @@
+POST http://localhost:8081/api/funcionarios/inserir
+Content-Type: application/json
+
+{
+  "nome":"testando",
+  "cargo":"estagiária",
+  "data_admissao":"2023-09-21",
+  "salario": "600",
+  "departamento": "TI"
+}
